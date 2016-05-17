@@ -27,13 +27,13 @@
       %td{:colspan => "2"}
       %td
         %strong
-          = @recipe_ingredients.map(&:carbohydrates).inject(0, :+).round(2)
+          = @recipe_ingredients.carbohydrates
       %td
         %strong
-          = @recipe_ingredients.map(&:fat).inject(0, :+).round(2)
+          = @recipe_ingredients.fat
       %td
         %strong
-          = @recipe_ingredients.map(&:protein).inject(0, :+).round(2)
+          = @recipe_ingredients.protein
       %td{:colspan => "3"}
 
 %br/

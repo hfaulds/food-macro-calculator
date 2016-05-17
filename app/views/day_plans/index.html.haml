@@ -1,0 +1,21 @@
+%h1 Listing day_plans
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @day_plans.each do |day_plan|
+      %tr
+        %td= day_plan.name
+        %td= link_to 'Show', day_plan
+        %td= link_to 'Edit', edit_day_plan_path(day_plan)
+        %td= link_to 'Destroy', day_plan, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Day plan', new_day_plan_path

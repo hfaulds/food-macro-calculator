@@ -1,0 +1,42 @@
+%p#notice= notice
+%h1 Day Plan Recipes
+%h2= @day_plan.name
+
+%table
+  %thead
+    %tr
+      %th Recipe
+      %th Carbohydrates
+      %th Fat
+      %th Protein
+      %th
+      %th
+      %th
+
+  %tbody
+    - @day_plan_recipes.each do |day_plan_recipe|
+      %tr
+        %td= day_plan_recipe.recipe_name
+        %td= day_plan_recipe.carbohydrates
+        %td= day_plan_recipe.fat
+        %td= day_plan_recipe.protein
+        %td= link_to 'Show', [@day_plan, day_plan_recipe]
+        %td= link_to 'Edit', edit_day_plan_day_plan_recipe_path(@day_plan, day_plan_recipe)
+        %td= link_to 'Destroy', [@day_plan, day_plan_recipe], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    %tr
+      %td
+      %td
+        %strong
+          = @day_plan.carbohydrates
+      %td
+        %strong
+          = @day_plan.fat
+      %td
+        %strong
+          = @day_plan.protein
+      %td{:colspan => "3"}
+
+%br
+
+= link_to 'New Day plan recipe', new_day_plan_day_plan_recipe_path(@day_plan)

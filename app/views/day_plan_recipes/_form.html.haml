@@ -1,0 +1,13 @@
+= form_for [@day_plan, @day_plan_recipe] do |f|
+  - if @day_plan_recipe.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@day_plan_recipe.errors.count, "error")} prohibited this day_plan_recipe from being saved:"
+      %ul
+        - @day_plan_recipe.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :recipe_id
+    = f.collection_select :recipe_id, Recipe.all, :id, :name
+  .actions
+    = f.submit 'Save'
