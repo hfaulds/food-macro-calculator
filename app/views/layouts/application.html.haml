@@ -7,4 +7,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    = link_to 'Day Plans', day_plans_path
+    = link_to 'Recipes', recipes_path
+    = link_to 'Ingredients', ingredients_path
+
     = yield

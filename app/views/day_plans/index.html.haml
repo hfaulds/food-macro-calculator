@@ -12,6 +12,8 @@
     - @day_plans.each do |day_plan|
       %tr
         %td= day_plan.name
+        - day_plan.day_plan_recipes.each do |day_plan_recipe|
+          %td= day_plan_recipe.recipe_name
         %td= link_to 'Show', day_plan
         %td= link_to 'Edit', edit_day_plan_path(day_plan)
         %td= link_to 'Destroy', day_plan, :method => :delete, :data => { :confirm => 'Are you sure?' }
