@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @ingredient.name
+%p
+  %strong Carbohydrates:
+  = @ingredient.carbohydrates
+%p
+  %strong Fat:
+  = @ingredient.fat
+%p
+  %strong Protein:
+  = @ingredient.protein
+= link_to 'Edit', edit_ingredient_path(@ingredient)
+|
+= link_to 'Back', ingredients_path

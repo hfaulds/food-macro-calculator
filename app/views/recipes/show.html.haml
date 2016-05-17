@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @recipe.name
+
+= link_to 'Ingredients', recipe_recipe_ingredients_url(@recipe)
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+|
+= link_to 'Back', recipes_path

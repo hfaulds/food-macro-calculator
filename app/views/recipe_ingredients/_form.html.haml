@@ -1,0 +1,21 @@
+= form_for([@recipe, @recipe_ingredient]) do |f|
+  - if @recipe_ingredient.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@recipe_ingredient.errors.count, "error")
+        prohibited this recipe_ingredient from being saved:
+      %ul
+        - @recipe_ingredient.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :amount
+    %br/
+    = f.number_field :amount, :step => 0.1
+  .field
+    = f.label :ingredient_id
+    %br/
+    = f.collection_select :ingredient_id, Ingredient.all, :id, :name
+    = link_to 'New Ingredient', new_ingredient_path
+  .actions
+    = f.submit
