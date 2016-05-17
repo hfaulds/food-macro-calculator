@@ -1,0 +1,36 @@
+*DS_Store
+.eprj
+*.swp
+*.swo
+*.log
+*~
+*.css
+
+.env
+tags
+gis-data
+production_backup_*.sql*
+dump.rdb
+/coverage/*
+/tmp/*
+/log/*
+/db/structure.sql
+/db/schema.rb
+nbproject/*
+
+### Emacs tmp files ###
+*#
+.#*
+
+##locally bundled gems
+.bundle/
+vendor/gems
+.rbx
+
+## Exclude packaged files ###
+/public/assets
+/public/source_map
+/public/js
+
+## RDOC ##
+doc/app
