@@ -24,7 +24,7 @@ nbproject/*
 
 ##locally bundled gems
 .bundle/
-vendor/gems
+vendor
 .rbx
 
 ## Exclude packaged files ###
