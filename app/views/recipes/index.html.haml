@@ -1,6 +1,6 @@
 %p#notice= notice
 %h1 Recipes
-%table
+%table.table
   %thead
     %tr
       %th Name
@@ -15,8 +15,8 @@
         %td= recipe.carbohydrates
         %td= recipe.fat
         %td= recipe.protein
-        %td= link_to 'Show', recipe
-        %td= link_to 'Edit', edit_recipe_path(recipe)
-        %td= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Recipe', new_recipe_path
+        %td= link_to 'Show', recipe, class: 'btn btn-primary'
+        %td= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-info'
+        %td= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
+= link_to 'New Recipe', new_recipe_path, class: 'btn btn-default'
