@@ -24,6 +24,7 @@ nbproject/*
 
 ##locally bundled gems
 .bundle/
+./bin
 vendor
 .rbx
 
