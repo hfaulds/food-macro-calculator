@@ -1,8 +1,7 @@
 %p#notice= notice
-%h1 Day Plan Recipes
 %h2= @day_plan.name
 
-%table
+%table.table
   %thead
     %tr
       %th Recipe
@@ -20,9 +19,9 @@
         %td= day_plan_recipe.carbohydrates
         %td= day_plan_recipe.fat
         %td= day_plan_recipe.protein
-        %td= link_to 'Show', [@day_plan, day_plan_recipe]
-        %td= link_to 'Edit', edit_day_plan_day_plan_recipe_path(@day_plan, day_plan_recipe)
-        %td= link_to 'Destroy', [@day_plan, day_plan_recipe], :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', recipe_recipe_ingredients_path(day_plan_recipe), class: 'btn btn-primary'
+        %td= link_to 'Edit', edit_day_plan_day_plan_recipe_path(@day_plan, day_plan_recipe), class: 'btn btn-info'
+        %td= link_to 'Destroy', [@day_plan, day_plan_recipe], :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
     %tr
       %td
@@ -39,4 +38,4 @@
 
 %br
 
-= link_to 'New Day plan recipe', new_day_plan_day_plan_recipe_path(@day_plan)
+= link_to 'Add Recipe', new_day_plan_day_plan_recipe_path(@day_plan), class: 'btn btn-default'

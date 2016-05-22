@@ -2,7 +2,7 @@
 %h1 Listing Recipe Ingredients
 %h2= @recipe.name
 
-%table
+%table.table
   %thead
     %tr
       %th Ingredient
@@ -12,31 +12,31 @@
       %th Protein
       %th{:colspan => "3"}
   %tbody
-    - @recipe_ingredients.each do |recipe_ingredient|
+    - @recipe.recipe_ingredients.each do |recipe_ingredient|
       %tr
         %td= recipe_ingredient.ingredient_name
         %td= recipe_ingredient.amount
         %td= recipe_ingredient.carbohydrates
         %td= recipe_ingredient.fat
         %td= recipe_ingredient.protein
-        %td= link_to 'Show', [@recipe, recipe_ingredient]
-        %td= link_to 'Edit', edit_recipe_recipe_ingredient_path(@recipe, recipe_ingredient)
-        %td= link_to 'Destroy', [@recipe, recipe_ingredient], method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', [@recipe, recipe_ingredient], class: 'btn btn-primary'
+        %td= link_to 'Edit', edit_recipe_recipe_ingredient_path(@recipe, recipe_ingredient), class: 'btn btn-info'
+        %td= link_to 'Destroy', [@recipe, recipe_ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 
     %tr
       %td{:colspan => "2"}
       %td
         %strong
-          = @recipe_ingredients.carbohydrates
+          = @recipe.carbohydrates
       %td
         %strong
-          = @recipe_ingredients.fat
+          = @recipe.fat
       %td
         %strong
-          = @recipe_ingredients.protein
+          = @recipe.protein
       %td{:colspan => "3"}
 
 %br/
 = link_to 'New Recipe ingredient', new_recipe_recipe_ingredient_path(@recipe)
 %br/
-= link_to 'Back to Recipes', recipe_path(@recipe)
+= link_to 'Back to Recipes', recipes_path
