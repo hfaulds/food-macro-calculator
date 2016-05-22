@@ -19,7 +19,6 @@
         %td= recipe_ingredient.carbohydrates
         %td= recipe_ingredient.fat
         %td= recipe_ingredient.protein
-        %td= link_to 'Show', [@recipe, recipe_ingredient], class: 'btn btn-primary'
         %td= link_to 'Edit', edit_recipe_recipe_ingredient_path(@recipe, recipe_ingredient), class: 'btn btn-info'
         %td= link_to 'Destroy', [@recipe, recipe_ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 

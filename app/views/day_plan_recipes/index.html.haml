@@ -19,8 +19,8 @@
         %td= day_plan_recipe.carbohydrates
         %td= day_plan_recipe.fat
         %td= day_plan_recipe.protein
-        %td= link_to 'Show', recipe_recipe_ingredients_path(day_plan_recipe), class: 'btn btn-primary'
-        %td= link_to 'Edit', edit_day_plan_day_plan_recipe_path(@day_plan, day_plan_recipe), class: 'btn btn-info'
+        %td= link_to 'Ingredients', recipe_recipe_ingredients_path(day_plan_recipe), class: 'btn btn-primary'
+        %td= link_to 'Rename', edit_day_plan_day_plan_recipe_path(@day_plan, day_plan_recipe), class: 'btn btn-info'
         %td= link_to 'Destroy', [@day_plan, day_plan_recipe], :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
     %tr

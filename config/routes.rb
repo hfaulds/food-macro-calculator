@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   root to: "day_plans#index"
 
-  resources :ingredients
+  resources :ingredients, :except => [:show]
   resources :recipes, :except => [:show] do
-    resources :recipe_ingredients
+    resources :recipe_ingredients, :except => [:show]
   end
   resources :day_plans, :except => [:show] do
     resources :day_plan_recipes, :except => [:show]
