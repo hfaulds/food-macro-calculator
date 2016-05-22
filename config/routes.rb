@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get '/' => "day_plans#index"
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  root to: "day_plans#index"
+
   resources :ingredients
   resources :recipes do
     resources :recipe_ingredients
@@ -8,5 +12,4 @@ Rails.application.routes.draw do
   resources :day_plans do
     resources :day_plan_recipes
   end
-  resources :users
 end
