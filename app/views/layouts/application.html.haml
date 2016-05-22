@@ -7,11 +7,21 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = link_to 'Day Plans', day_plans_path
-    = link_to 'Recipes', recipes_path
-    = link_to 'Ingredients', ingredients_path
-
-    = link_to 'Sign in', new_user_session_path
-    = link_to 'Register', new_user_registration_path
+    .navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          = link_to "Food Macros", "#", class: "navbar-brand"
+        .nav.navbar-nav.collapse.navbar-collapse
+          %li
+            = link_to 'Day Plans', day_plans_path
+          %li
+            = link_to 'Recipes', recipes_path
+          %li
+            = link_to 'Ingredients', ingredients_path
+        .nav.navbar-nav.navbar-right
+          %li
+            = link_to 'Sign in', new_user_session_path
+          %li
+            = link_to 'Register', new_user_registration_path
 
     = yield
