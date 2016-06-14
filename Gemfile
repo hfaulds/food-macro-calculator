@@ -9,6 +9,7 @@ gem 'hamlit-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'rollbar'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
